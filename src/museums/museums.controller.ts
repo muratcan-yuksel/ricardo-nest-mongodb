@@ -32,7 +32,7 @@ export class MuseumsController {
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateMuseumDto: UpdateMuseumDto) {
-    return this.museumsService.update(+id, updateMuseumDto);
+    return this.museumsService.update(id, updateMuseumDto);
   }
 
   @Delete(':id')

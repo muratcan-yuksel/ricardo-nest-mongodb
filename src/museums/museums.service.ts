@@ -23,8 +23,10 @@ export class MuseumsService {
     return await this.museumModel.findById(id).exec();
   }
 
-  update(id: number, updateMuseumDto: UpdateMuseumDto) {
-    return `This action updates a #${id} museum`;
+  async update(id: string, updateMuseumDto: UpdateMuseumDto) {
+    return await this.museumModel
+      .findByIdAndUpdate(id, updateMuseumDto, { new: true })
+      .exec();
   }
 
   remove(id: number) {
