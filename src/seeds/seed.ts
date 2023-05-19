@@ -240,7 +240,8 @@ const jsonData = [
 const seedDatabase = async () => {
   try {
     //already seeded, no need to seed again
-    // await mongoose.connect(process.env.MONGODB_URI);
+    // await mongoose.connect(
+    // );
 
     await MuseumDataModel.deleteMany({}).exec();
 
