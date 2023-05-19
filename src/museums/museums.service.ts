@@ -29,7 +29,7 @@ export class MuseumsService {
       .exec();
   }
 
-  remove(id: string) {
-    return `This action removes a #${id} museum`;
+  async remove(id: string) {
+    return await this.museumModel.findByIdAndDelete(id).exec();
   }
 }
