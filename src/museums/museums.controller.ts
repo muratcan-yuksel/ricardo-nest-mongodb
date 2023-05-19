@@ -37,6 +37,6 @@ export class MuseumsController {
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.museumsService.remove(+id);
+    return this.museumsService.remove(id);
   }
 }

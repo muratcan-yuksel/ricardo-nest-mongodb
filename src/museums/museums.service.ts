@@ -11,8 +11,8 @@ export class MuseumsService {
     @InjectModel('MuseumData') private readonly museumModel: Model<Museum>,
   ) {}
 
-  create(createMuseumDto: CreateMuseumDto) {
-    return 'This action adds a new museum';
+  async create(createMuseumDto: CreateMuseumDto) {
+    await this.museumModel.create(createMuseumDto);
   }
 
   async findAll() {
@@ -29,7 +29,7 @@ export class MuseumsService {
       .exec();
   }
 
-  remove(id: number) {
+  remove(id: string) {
     return `This action removes a #${id} museum`;
   }
 }
