@@ -19,8 +19,8 @@ export class MuseumsService {
     return await this.museumModel.find().exec();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} museum`;
+  async findOne(id: string) {
+    return await this.museumModel.findById(id).exec();
   }
 
   update(id: number, updateMuseumDto: UpdateMuseumDto) {
